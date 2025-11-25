@@ -50,6 +50,17 @@ nav {
   padding: 12px 20px;
 }
 
+/* Estilo para la barra de navegación en modo móvil */
+@media (max-width: 991px) {
+  .navbar {
+    border-bottom: 1px solid #2a2b2d !important; /* Borde claro para pantallas pequeñas */
+  }
+  /* Cambiar color del icono del menú hamburguesa */
+  .navbar-toggler-icon {
+    background-color: #767677; /* Cambiar color del icono en móvil */
+  }
+}
+
 .navbar-brand {
   color: var(--color-text) !important;
 }
