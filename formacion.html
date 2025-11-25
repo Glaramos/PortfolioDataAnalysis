@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formación | Portafolio</title>
+
+  <!-- Fuentes -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="index.html">Gladys Ramos</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="formacion.html">Education & Training</a></li>
+          <li class="nav-item"><a class="nav-link" href="etl.html">ETL</a></li>
+          <li class="nav-item"><a class="nav-link" href="sql.html">SQL</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="container-main mt-5 pt-5">
+
+    <canvas id="dataCanvas"></canvas>
+
+    <div class="section formation">
+
+      <h2>Education & Training</h2>
+
+      <p>
+        Education in <strong>University Technician in Tourism Business Administration</strong>,
+        <strong>University Executive Secretary</strong>, <strong>Higher Technician in Hotel Management and
+          Administration</strong>,
+        <strong>Programming</strong>, and complementary areas.
+      </p>
+
+      <!-- Filtros -->
+      <h5 class="mt-4">Filter by Topic</h5>
+
+      <div class="mb-4 d-flex flex-wrap gap-2">
+        <button class="btn btn-outline-secondary tag-filter-btn active" data-tag="all">All</button>
+        <button class="btn btn-outline-secondary tag-filter-btn" data-tag="administrativo">Administrative</button>
+        <button class="btn btn-outline-secondary tag-filter-btn" data-tag="programacion">Programming</button>
+        <button class="btn btn-outline-secondary tag-filter-btn" data-tag="analisis">Analysis</button>
+        <button class="btn btn-outline-secondary tag-filter-btn" data-tag="tester">Testing</button>
+        <button class="btn btn-outline-secondary tag-filter-btn" data-tag="github">Git and GitHub</button>
+        <button class="btn btn-outline-secondary tag-filter-btn" data-tag="idiomas">Languages</button>
+        <button class="btn btn-outline-secondary tag-filter-btn" data-tag="Otros">Others</button>
+      </div>
+
+      <!-- Tarjeta 1 -->
+      <div class="project-card formation-card" data-tags="administrativo">
+        <h2 class="project-title">
+          <i class="bi bi-briefcase me-2 text-warning"></i>Técnico Universitario en Administración de Emprendimientos
+          Turísticos
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Graduada</li>
+          <li><strong>Fecha:</strong> 2017–2019</li>
+          <li><strong>Institución:</strong> UNaM - Universidad Nacional de Misiones – Facultad de Ciencias Económicas
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Administrativo</span>
+          <span class="badge badge-soft analisis">Análisis</span>
+          <span class="badge badge-soft desarrollo">Desarrollo</span>
+        </p>
+
+
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="project-card formation-card" data-tags="administrativo">
+        <h2 class="project-title">
+          <i class="bi bi-journal-check me-2 text-info"></i>Secretaria Ejecutiva Universitaria</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Graduada</li>
+          <li><strong>Fecha:</strong> 2015–2017</li>
+          <li><strong>Institución:</strong> UNaM - Universidad Nacional de Misiones – Facultad de Ciencias Económicas
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Coordinación administrativa</span>
+          <span class="badge badge-soft analisis">Gestión de documentos</span>
+          <span class="badge badge-soft desarrollo">Atención personalizada</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="project-card formation-card" data-tags="analisis">
+        <h2 class="project-title">
+          <i class="bi bi-graph-up-arrow me-2 text-info"></i>Python para Ciencia de Datos e Inteligencia Artificial </i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2025</li>
+          <li><strong>Institución:</strong> Silicon Misiones
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Python</span>
+          <span class="badge badge-soft analisis">SQL avanzado</span>
+          <span class="badge badge-soft desarrollo">Modelado de datos avanzado</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 4 -->
+      <div class="project-card formation-card" data-tags="analisis">
+        <h2 class="project-title">
+          <i class="bi bi-bar-chart-line me-2 text-info"></i>Visualización de Datos con Power BI </i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2024</li>
+          <li><strong>Institución:</strong> Prof. R. Salinas
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Visualización</span>
+          <span class="badge badge-soft analisis">Análisis de datos</span>
+          <span class="badge badge-soft desarrollo">storytelling</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 5 -->
+      <div class="project-card formation-card" data-tags="analisis">
+        <h2 class="project-title">
+          <i class="bi bi-database-fill-gear me-2 text-primary"></i>Ingeniería de Datos Avanzada</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2024</li>
+          <li><strong>Institución:</strong> Datalytics / Silicon Misiones
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Python</span>
+          <span class="badge badge-soft analisis">SQL avanzado</span>
+          <span class="badge badge-soft desarrollo">Modelado de datos avanzado</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 6 -->
+      <div class="project-card formation-card" data-tags="analisis">
+        <h2 class="project-title">
+          <i class="bi bi-database me-2 text-info"></i>Data & Analytics Intermedio II</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2023</li>
+          <li><strong>Institución:</strong> Silicon Misiones
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Python Avanzado</span>
+          <span class="badge badge-soft analisis">SQL Intermedio- Avanzado</span>
+          <span class="badge badge-soft desarrollo">Estadistica para toma de desiciones</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 7 -->
+      <div class="project-card formation-card" data-tags="tester">
+        <h2 class="project-title">
+          <i class="bi bi-search me-2 text-warning"></i>Testing Avanzado</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2023</li>
+          <li><strong>Institución:</strong> UTN / Argentina Programa 4.0
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Automatización</span>
+          <span class="badge badge-soft admin">Ejecución de Pruebas</span>
+          <span class="badge badge-soft analisis">Diseño</span>
+          <span class="badge badge-soft desarrollo">Mejora continua</span>
+          <span class="badge badge-soft desarrollo">Mantis, Jira</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 8 -->
+      <div class="project-card formation-card" data-tags="tester">
+        <h2 class="project-title">
+          <i class="bi bi-bug me-2 text-warning"></i>Testing Manual, Ágil y con herramientas</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2023</li>
+          <li><strong>Institución:</strong> UTN / Argentina Programa 4.0
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Automatización</span>
+          <span class="badge badge-soft admin">Ejecución de Pruebas</span>
+          <span class="badge badge-soft analisis">Diseño</span>
+          <span class="badge badge-soft desarrollo">Mejora continua</span>
+          <span class="badge badge-soft desarrollo">Mantis, Jira</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 9 -->
+      <div class="project-card formation-card" data-tags="analisis programacion">
+        <h2 class="project-title">
+          <i class="bi bi-terminal me-2 text-info"></i></i>Python Essentials II</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2023</li>
+          <li><strong>Institución:</strong> CISCO
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Analisis de datos</span>
+          <span class="badge badge-soft admin">Script</span>
+          <span class="badge badge-soft analisis">Manipulación de datos</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 10 -->
+      <div class="project-card formation-card" data-tags="analisis programacion">
+        <h2 class="project-title">
+          <i class="bi bi-terminal me-2 text-info"></i>Python Essentials I</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2023</li>
+          <li><strong>Institución:</strong> CISCO
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Análisis de datos</span>
+          <span class="badge badge-soft admin">Script</span>
+          <span class="badge badge-soft analisis">Automatización</span>
+          <span class="badge badge-soft analisis">Desarrollo de Software</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 11 -->
+      <div class="project-card formation-card" data-tags="analisis">
+        <h2 class="project-title">
+          <i class="bi bi-database me-2 text-info"></i>Introducción a la Base de Datos</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2022</li>
+          <li><strong>Institución:</strong> PoloTic Misiones
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Gestión de datos</span>
+          <span class="badge badge-soft analisis">Realizar Consultas</span>
+          <span class="badge badge-soft desarrollo">Extraer</span>
+          <span class="badge badge-soft desarrollo">Crear</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 12 -->
+      <div class="project-card formation-card" data-tags="programacion">
+        <h2 class="project-title">
+          <i class="bi bi-gear-wide-connected me-2 text-success"></i>Introducción a Spring Boot con Angular</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2022</li>
+          <li><strong>Institución:</strong> Arandu Software
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Frontend</span>
+          <span class="badge badge-soft analisis">Backend</span>
+          <span class="badge badge-soft desarrollo">Integración</span>
+          <span class="badge badge-soft desarrollo">Base de Datos</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 13 -->
+      <div class="project-card formation-card" data-tags="analisis">
+        <h2 class="project-title">
+          <i class="bi bi-database me-2 text-info"></i>Almacenamiento en la Nube con AWS </i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2022</li>
+          <li><strong>Institución:</strong> Silicon Misiones
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Lambda</span>
+          <span class="badge badge-soft analisis">Guarda datos de forma segura</span>
+          <span class="badge badge-soft desarrollo">Accesibles desde cualquier lugar</span>
+          <span class="badge badge-soft desarrollo">Optimiza su costo</span>
+          <span class="badge badge-soft desarrollo">Integra aplicaciones en la nube</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 14 -->
+      <div class="project-card formation-card" data-tags="programacion">
+        <h2 class="project-title">
+          <i class="bi bi-layers-fill me-2 text-info"></i>Desarrollo Web Full Stack con Python y JavaScript</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2021</li>
+          <li><strong>Institución:</strong> Polo Tic Misiones
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Frontend</span>
+          <span class="badge badge-soft analisis">Backend</span>
+          <span class="badge badge-soft desarrollo">Base de Datos</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 15 -->
+      <div class="project-card formation-card" data-tags="analisis">
+        <h2 class="project-title">
+          <i class="bi bi-database me-2 text-info"></i>DATA SCIENCE FOR ANALYTICS </i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2021</li>
+          <li><strong>Institución:</strong> Silicon Misiones
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Analisis de datos</span>
+          <span class="badge badge-soft analisis">Librerias Panda Matplolib seaborn Numpy</span>
+          <span class="badge badge-soft desarrollo">Modelos estadisticos</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 16 -->
+      <div class="project-card formation-card" data-tags="analisis">
+        <h2 class="project-title">
+          <i class="bi bi-database me-2 text-info"></i>Introducción a MySQL y GitHub</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2021</li>
+          <li><strong>Institución:</strong> TodoCode
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Frontend</span>
+          <span class="badge badge-soft analisis">Backend</span>
+          <span class="badge badge-soft desarrollo">Base de Datos</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 17 -->
+      <div class="project-card formation-card" data-tags="analisis">
+        <h2 class="project-title">
+          <i class="bi bi-file-earmark-spreadsheet-fill me-2 text-success"></i>Excel Avanzado</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2017</li>
+          <li><strong>Institución:</strong> Arandu Software
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Funciones</span>
+          <span class="badge badge-soft analisis">Macros</span>
+          <span class="badge badge-soft desarrollo">Tabla Dinamica</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 18 -->
+      <div class="project-card formation-card" data-tags="administrativo">
+        <h2 class="project-title">
+          <i class="bi bi-receipt me-2 text-info"></i>Liquidación de Sueldos y Jornales</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2023</li>
+          <li><strong>Institución:</strong> RIET
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Cálculo de haberes</span>
+          <span class="badge badge-soft analisis">Gestion de Jornales</span>
+          <span class="badge badge-soft desarrollo">Cumplimiento legal</span>
+          <span class="badge badge-soft desarrollo">Emisión de recibos</span>
+          <span class="badge badge-soft desarrollo">Informes y Reportes</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 19 -->
+      <div class="project-card formation-card" data-tags="Otros">
+        <h2 class="project-title">
+          <i class="bi bi-headset me-2 text-info"></i></i>Calidad en Atención al Cliente</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2020</li>
+          <li><strong>Institución:</strong> CAMEeducativ@
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Metricas y Plan de mejora </span>
+          <span class="badge badge-soft analisis">Trabajo en equipo</span>
+          <span class="badge badge-soft desarrollo">Analisis de datos</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 20 -->
+      <div class="project-card formation-card" data-tags="idiomas">
+        <h2 class="project-title">
+          <i class="bi bi-translate me-2 text-info"></i>Ingles Intermedio</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2025</li>
+          <li><strong>Institución:</strong> Silicon Misiones
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Comunicación</span>
+          <span class="badge badge-soft analisis">Escritura</span>
+          <span class="badge badge-soft desarrollo">Interacción </span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 21 -->
+      <div class="project-card formation-card" data-tags="idiomas">
+        <h2 class="project-title">
+          <i class="bi bi-translate me-2 text-info"></i>Portugués</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2025</li>
+          <li><strong>Institución:</strong> Silicon Misiones
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Comunicación</span>
+          <span class="badge badge-soft analisis">Escritura</span>
+          <span class="badge badge-soft desarrollo">Interacción </span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 22 -->
+      <div class="project-card formation-card" data-tags="Otros">
+        <h2 class="project-title">
+          <i class="bi bi-people-fill me-2 text-info"></i></i></i>Inducción de formadores para la formación en
+          #YoProgramo-Argentina Programa,</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2023</li>
+          <li><strong>Institución:</strong> INTI - Instituto Nacional de Tecnólogia Industrial
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Capacitación</span>
+          <span class="badge badge-soft admin">Herramientas IT</span>
+          <span class="badge badge-soft analisis">Técnica de Enseñanza</span>
+          <span class="badge badge-soft desarrollo">Evaluador</span>
+          <span class="badge badge-soft desarrollo">Mentor</span>
+        </p>
+      </div>
+
+      <!-- Tarjeta 23 -->
+      <div class="project-card formation-card" data-tags="github">
+        <h2 class="project-title">
+          <i class="bi bi-github me-2 text-info"></i></i>Introducción a Git y GitHub</i>
+        </h2>
+
+        <ul>
+          <li><strong>Finalización:</strong> Aprobado</li>
+          <li><strong>Fecha:</strong> 2021</li>
+          <li><strong>Institución:</strong> TodoCode
+          </li>
+        </ul>
+
+        <p class="project-tech">
+
+          <span class="badge badge-soft admin">Control de versiones</span>
+          <span class="badge badge-soft admin">Trabajo Colaborativo</span>
+          <span class="badge badge-soft analisis">Gestion de respositorios</span>
+          <span class="badge badge-soft desarrollo">Rama</span>
+          <span class="badge badge-soft desarrollo">Documentación</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 mt-5">
+    © 2025 Gladys Ramos — Portafolio · <a href="#" id="scrollTopLink">Go up</a>
+  </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/animation.js"></script>
+
+  <!-- Filtro por tags -->
+  <script>
+    const tagBtns = document.querySelectorAll(".tag-filter-btn");
+    const cards = document.querySelectorAll(".formation-card");
+
+    tagBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tagBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const tag = btn.dataset.tag;
+
+        cards.forEach(card => {
+          const tags = card.dataset.tags.split(" ");
+          card.style.display = (tag === "all" || tags.includes(tag)) ? "block" : "none";
+        });
+      });
+    });
+
+    // Scroll suave
+    document.getElementById("scrollTopLink").addEventListener("click", e => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+
+</html>

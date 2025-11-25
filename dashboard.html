@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboards | Portafolio</title>
+
+  <!-- Fuentes elegantes -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:wght@300;400;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Iconos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="index.html">Gladys Ramos</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="formacion.html">Education & Training</a></li>
+          <li class="nav-item"><a class="nav-link" href="etl.html">ETL</a></li>
+          <li class="nav-item"><a class="nav-link" href="sql.html">SQL</a></li>
+          <li class="nav-item"><a class="nav-link active" href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="container-main mt-5 pt-5">
+    <canvas id="dataCanvas"></canvas>
+
+    <div class="section dashboards">
+
+      <h2 style="color:#f8f9fa;">Dashboard Projects</h2>
+      <p>
+        Welcome to my collection of <span style="color:#0073e6;" font-weight:bold;>Dashboard Projects</span>, where I
+        turn data into
+        <span style="color:#0073e6;" font-weight:bold;>clear and visually appealing insights</span>. The dashboards
+        were developed in
+        <span style="color:#0073e6;" font-weight:bold;>Excel</span>, using <span style="color:#0073e6;"
+          font-weight:bold;>pivot tables and slicers</span>
+        for quick and interactive analysis, and in <span style="color:#0073e6;" font-weight:bold;>Power BI</span>,
+        creating
+        <span style="color:#0073e6;" font-weight:bold;>dynamic and intuitive visualizations</span>. Each project
+        combines
+        <span style="color:#0073e6;" font-weight:bold;>data analysis</span>, <span style="color:#0073e6;"
+          font-weight:bold;>visual storytelling</span>,
+        and <span style="color:#0073e6;" font-weight:bold;>functionality</span>, making it easier to make decisions
+        and presenting information professionally.
+      </p>
+      </section>
+
+
+      <!-- Card 1 Employee Report-->
+      <div class="project-card">
+        <h2 class="project-title">Employee Report</h2>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GIF Hover Zoom</title>
+
+        <body>
+
+          <div class="gif-container">
+            <img src="assets/img/report.gif" alt="Dashboard Tech">
+          </div>
+
+        </body>
+
+        <p>
+          This dashboard summarizes the main characteristics of the employees, including gender, educational level,
+          marital status, areas of specialization, and departmental distribution. The data comes from the internal Human
+          Resources department and was cleaned and analyzed to ensure its quality. The design prioritizes clarity,
+          allowing for quick reading and dynamic exploration of the information through interactive filters
+        </p>
+
+        <p class="project-tech">Technology: Power BI</p>
+
+        <div class="social-links">
+          <a href="https://github.com/Glaramos" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="assets/pdf/Dashboard Description.pdf" target="_blank">
+            <i class="bi bi-file-earmark-pdf" style="font-size: 24px; color: red;"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2 Tech Sales -->
+      <div class="project-card">
+        <h2 class="project-title">Tech Sales Dashboard Analysis</h2>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GIF Hover Zoom</title>
+
+        <body>
+
+          <div class="gif-container">
+            <img src="assets/img/ventas.gif" alt="Dashboard Tech">
+          </div>
+
+        </body>
+
+
+        <p>
+          The analysis revealed the months with the highest sales volume (April and May) and a positive trend
+          toward the end of the year. The Southeast and Northeast regions generated the strongest results, while Apple
+          products accounted for 38% of total sales, making them the leading category.
+        </p>
+        <p>
+          This dashboard enables sales teams to make faster and more data-driven decisions through clearly structured
+          KPIs and visualizations.
+        </p>
+
+        <p class="project-tech">Technology: Excel (pivot tables, slicers, combined charts, and KPIs)</p>
+
+        <div class="social-links">
+          <a href="https://github.com/Glaramos" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="https://www.kaggle.com/code/gladysangelicaramos/tech-sales-dashboard-analysis" target="_blank">
+            <i class="bi bi-database"></i>kaggle
+          </a>
+        </div>
+      </div>
+
+
+
+      <!-- Card 3 Production Dashboard by Shipment Priority and Type-->
+      <div class="project-card">
+        <h2 class="project-title">Production Dashboard by Shipment Priority and Type</h2>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GIF Hover Zoom</title>
+
+        <body>
+
+          <div class="gif-container">
+            <img src="assets/img/production_envio.gif" alt="Dashboard Tech">
+          </div>
+
+        </body>
+
+        <!-- <img src="assets/img/production_envio.gif" class="img-fluid mb-3 rounded shadow" alt="Dashboard Tech"> -->
+
+        <p>
+          This dashboard provides a comprehensive view of shipment behavior and their distribution by priority, service
+          type, and customer. It helps identify the most relevant segments (such as high-priority shipments and
+          distributor customers), as well as periods of peak operational load. Its visual structure enables quick and
+          effective analysis for strategic decision-making in logistics and production.
+        </p>
+
+        <p class="project-tech">Technology: Power BI</p>
+
+        <div class="social-links">
+          <a href="https://github.com/Glaramos" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="assets/pdf/Dashboard by Priority and Shipping Type.pdf" target="_blank"><i
+              class="bi bi-file-earmark-pdf" style="font-size: 24px; color: red;"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4 The Tourist Jacaranda-->
+      <div class="project-card">
+        <h2 class="project-title">The Tourist Jacaranda</h2>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GIF Hover Zoom</title>
+
+        <body>
+
+          <div class="gif-container">
+            <img src="assets/img/jacaranda.gif" alt="Dashboard Tech">
+          </div>
+
+        </body>
+
+        <p>
+
+
+        <p>
+          🌿 Project Description
+          This project presents an interactive dashboard developed in Excel (Office 2019) to analyze the sales of the
+          tourist complex El Jacarandá, a space dedicated to tourism and gastronomy in Misiones, Argentina.
+
+          The goal was to assess the performance of the venues, products, and salespeople, identifying opportunities for
+          improvement through clear visual indicators and key performance metrics.
+        </p>
+
+        <p class="project-tech">Technology: Excel (pivot tables, slicers, combined charts, and KPIs)</p>
+
+        <div class="social-links">
+          <a href="https://github.com/Glaramos" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="https://www.kaggle.com/code/gladysangelicaramos/excel-dashboard-an-lisis-de-ventas-tur-sticas"
+            target="_blank">
+            <i class="bi bi-database"></i>kaggle
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 5 Financial Summary-->
+      <div class="project-card">
+        <h2 class="project-title">Financial Summary</h2>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GIF Hover Zoom</title>
+
+        <body>
+
+          <div class="gif-container">
+            <img src="assets/img/resumenFinanciero.gif" alt="Dashboard Tech">
+          </div>
+
+        </body>
+
+        <p>
+          This dashboard provides a comprehensive analysis of the company’s financial performance, offering clear
+          insights into revenue, sales volume, profitability, and behavior by category, region, and sales team. It is
+          designed to support decision-making through intuitive visualizations and key performance indicators.
+        </p>
+
+        <p class="project-tech">Technology: Power BI</p>
+        <div class="social-links">
+          <a href="https://github.com/Glaramos" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="assets/pdf/Dashboard resumen financiero.pdf" target="_blank">
+            <i class="bi bi-file-earmark-pdf" style="font-size: 24px; color: red;"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Card 6 NutriHouse-->
+      <div class="project-card">
+        <h2 class="project-title">Dashboard NutriHouse</h2>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GIF Hover Zoom</title>
+
+        <body>
+
+          <div class="gif-container">
+            <img src="assets/img/nutriHouse.gif" alt="Dashboard Tech">
+          </div>
+
+        </body>
+
+        <p>
+          The NutriHouse Sales Dashboard provides a visually engaging overview of monthly sales, categories,
+          salesperson performance, and pricing ranges, enabling the identification of trends and opportunities.
+        </p>
+
+        <p class="project-tech">Technology: Excel (pivot tables, slicers, combined charts, and KPIs) </p>
+
+        <div class="social-links">
+          <a href="https://github.com/Glaramos" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="https://www.kaggle.com/code/gladysangelicaramos/dashboard-diet-tica-nutrihouse" target="_blank">
+            <i class="bi bi-database"></i>kaggle
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 7 Smart Shop Sales-->
+      <div class="project-card">
+        <h2 class="project-title">Smart Shop Sales Analysis</h2>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GIF Hover Zoom</title>
+
+        <body>
+
+          <div class="gif-container">
+            <img src="assets/img/ventas smart.gif" alt="Dashboard Tech">
+          </div>
+
+        </body>
+
+
+        <p>
+          This dashboard presents a complete overview of Smart Shop’s performance, showing revenue, top-selling
+          products, payment method distribution, and monthly trends, facilitating quick strategic decisions.
+        </p>
+
+        <p class="project-tech">Technology: Excel (pivot tables, slicers, combined charts, and KPIs) </p>
+
+        <div class="social-links">
+          <a href="https://github.com/Glaramos" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="https://www.kaggle.com/code/gladysangelicaramos/dashboard-ventas-smart-shop" target="_blank">
+            <i class="bi bi-database"></i>kaggle
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 mt-5">
+      © 2025 Gladys Ramos — Portafolio · <a href="#" id="scrollTopLink">Go up</a>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/animation.js"></script>
+
+  <script>
+    document.getElementById("scrollTopLink").addEventListener("click", function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+  <script>
+    // Solo para móviles: tocar la imagen para hacer zoom
+    const gif = document.getElementById('gif1');
+    gif.addEventListener('click', () => {
+      gif.classList.toggle('zoom-active');
+    });
+  </script>
+
+</body>
+
+</html>

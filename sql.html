@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQL | Portafolio</title>
+
+  <!-- Fuentes -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Iconos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Estilos generales -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="index.html">Gladys Ramos</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="formacion.html">Education & Training</a></li>
+          <li class="nav-item"><a class="nav-link" href="etl.html">ETL</a></li>
+          <li class="nav-item"><a class="nav-link active" href="sql.html">SQL</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="container-main mt-5 pt-5">
+
+    <!-- Canvas de animación detrás -->
+    <canvas id="dataCanvas"></canvas>
+
+    <!-- SECCIÓN PRINCIPAL -->
+    <div class="container px-md-5 px-3">
+
+      <h2>SQL Data Analysis Projects</h2>
+      <p>
+        SQL queries focused on data analysis, business intelligence, and dataset exploration.
+        All of them include techniques such as aggregations, joins, subqueries, and analytical functions.
+      </p>
+
+      <p><strong>Technologies:</strong> SQL Server - PostgreSQL</p>
+
+      <!-- ============================
+           TARJETAS DE CONSULTAS SQL
+      ============================= -->
+
+      <!-- Consulta 1 -->
+      <div class="etl-card mb-4">
+        <h4><i class="bi bi-database-check text-primary me-2"></i>Query 1 — Sales by Region</h4>
+
+        <div class="notebook-description">
+          Returns the total sales grouped by region, including the average per sales person.
+        </div>
+
+        <div class="notebook-cell">
+          <pre>
+<span class="sql-keyword">SELECT</span> region,
+       <span class="sql-function">SUM</span>(sales) <span class="sql-keyword">AS</span> total_sales,
+       <span class="sql-function">AVG</span>(sales) <span class="sql-keyword">AS</span> average_sales
+<span class="sql-keyword">FROM</span> sales
+<span class="sql-keyword">WHERE</span> date >= <span class="sql-string">'2025-01-01'</span>
+<span class="sql-keyword">GROUP BY</span> region
+<span class="sql-keyword">ORDER BY</span> total_sales <span class="sql-keyword">DESC</span>;
+</pre>
+        </div>
+      </div>
+
+
+      <!-- Query 2 -->
+      <div class="etl-card mb-4">
+        <h4><i class="bi bi-bar-chart-line text-success me-2"></i>Query 2 — Top 5 Best-Selling Products</h4>
+
+        <div class="notebook-description">
+          Selects the 5 products with the highest quantity sold in the last quarter.
+        </div>
+
+        <div class="notebook-cell">
+          <pre>
+<span class="sql-keyword">SELECT</span> TOP 5 product,
+       <span class="sql-function">SUM</span>(quantity) <span class="sql-keyword">AS</span> total_sold
+<span class="sql-keyword">FROM</span> sales
+<span class="sql-keyword">WHERE</span> date BETWEEN <span class="sql-string">'2025-07-01'</span> <span class="sql-keyword">AND</span> <span class="sql-string">'2025-09-30'</span>
+<span class="sql-keyword">GROUP BY</span> product
+<span class="sql-keyword">ORDER BY</span> total_sold <span class="sql-keyword">DESC</span>;
+    </pre>
+        </div>
+      </div>
+
+      <!-- Query 3 -->
+      <div class="etl-card mb-4">
+        <h4><i class="bi bi-flag text-warning me-2"></i>Query 3 — Sales by Country</h4>
+
+        <div class="notebook-description">
+          Retrieves the total sales grouped by country.
+        </div>
+
+        <div class="notebook-cell">
+          <pre>
+<span class="sql-keyword">SELECT</span> c.country,
+       <span class="sql-function">SUM</span>(o.total_amount) <span class="sql-keyword">AS</span> sales_by_country
+<span class="sql-keyword">FROM</span> customers c
+<span class="sql-keyword">JOIN</span> orders o <span class="sql-keyword">ON</span> o.customer_id = c.customer_id
+<span class="sql-keyword">GROUP BY</span> c.country
+<span class="sql-keyword">ORDER BY</span> sales_by_country <span class="sql-keyword">DESC</span>;
+    </pre>
+        </div>
+      </div>
+
+
+      <!-- Query 4 -->
+      <div class="etl-card mb-4">
+        <h4><i class="bi bi-box-seam text-danger me-2"></i>Query 4 — Best-Selling Products</h4>
+
+        <div class="notebook-description">
+          Lists the products with the highest quantity sold.
+        </div>
+
+        <div class="notebook-cell">
+          <pre>
+<span class="sql-keyword">SELECT</span> p.product_name,
+       <span class="sql-function">SUM</span>(oi.quantity) <span class="sql-keyword">AS</span> units_sold
+<span class="sql-keyword">FROM</span> order_items oi
+<span class="sql-keyword">JOIN</span> products p <span class="sql-keyword">ON</span> p.product_id = oi.product_id
+<span class="sql-keyword">GROUP BY</span> p.product_name
+<span class="sql-keyword">ORDER BY</span> units_sold <span class="sql-keyword">DESC</span>;
+    </pre>
+        </div>
+      </div>
+
+
+      <!-- Query 5 -->
+      <div class="etl-card mb-4">
+        <h4><i class="bi bi-calendar2-week text-info me-2"></i>Query 5 — Average Ticket per Month</h4>
+
+        <div class="notebook-description">
+          Calculates the monthly average ticket.
+        </div>
+
+        <div class="notebook-cell">
+          <pre>
+<span class="sql-keyword">SELECT</span>
+       <span class="sql-function">DATE_FORMAT</span>(order_date, <span class="sql-string">'%Y-%m'</span>) <span class="sql-keyword">AS</span> month,
+       <span class="sql-function">AVG</span>(total_amount) <span class="sql-keyword">AS</span> average_ticket
+<span class="sql-keyword">FROM</span> orders
+<span class="sql-keyword">GROUP BY</span> DATE_FORMAT(order_date, <span class="sql-string">'%Y-%m'</span>)
+<span class="sql-keyword">ORDER BY</span> month <span class="sql-keyword">DESC</span>;
+    </pre>
+        </div>
+      </div>
+
+
+      <!-- Query 6 -->
+      <div class="etl-card mb-4">
+        <h4><i class="bi bi-trophy text-primary me-2"></i>Query 6 — Customer Ranking</h4>
+
+        <div class="notebook-description">
+          Ranking of customers by total amount spent (window functions).
+        </div>
+
+        <div class="notebook-cell">
+          <pre>
+<span class="sql-keyword">SELECT</span> customer_id,
+       <span class="sql-function">SUM</span>(total_amount) <span class="sql-keyword">AS</span> total_spent,
+       <span class="sql-keyword">RANK()</span> <span class="sql-keyword">OVER</span> (ORDER BY SUM(total_amount) DESC) <span class="sql-keyword">AS</span> ranking
+<span class="sql-keyword">FROM</span> orders
+<span class="sql-keyword">GROUP BY</span> customer_id;
+    </pre>
+        </div>
+      </div>
+
+
+      <!-- Query 7 -->
+      <div class="etl-card mb-4">
+        <h4><i class="bi bi-columns-gap text-success me-2"></i>Query 7 — Category with Highest Revenue</h4>
+
+        <div class="notebook-description">
+          Determines which product category generates the most revenue.
+        </div>
+
+        <div class="notebook-cell">
+          <pre>
+<span class="sql-keyword">SELECT</span> p.category,
+       <span class="sql-function">SUM</span>(oi.quantity * oi.item_price) <span class="sql-keyword">AS</span> revenue
+<span class="sql-keyword">FROM</span> order_items oi
+<span class="sql-keyword">JOIN</span> products p <span class="sql-keyword">ON</span> p.product_id = oi.product_id
+<span class="sql-keyword">GROUP BY</span> p.category
+<span class="sql-keyword">ORDER BY</span> revenue <span class="sql-keyword">DESC</span>;
+    </pre>
+        </div>
+      </div>
+
+
+
+      <!-- Query 8 -->
+      <div class="etl-card mb-4">
+        <h4><i class="bi bi-graph-up-arrow text-warning me-2"></i>Query 8 — 7-Day Moving Average</h4>
+
+        <div class="notebook-description">
+          Calculates a 7-day moving average of total sales.
+        </div>
+
+        <div class="notebook-cell">
+          <pre>
+<span class="sql-keyword">SELECT</span> order_date,
+       total_amount,
+       <span class="sql-function">AVG</span>(total_amount) <span class="sql-keyword">OVER</span> (
+         <span class="sql-keyword">ORDER BY</span> order_date
+         <span class="sql-keyword">ROWS BETWEEN</span> 6 PRECEDING <span class="sql-keyword">AND</span> CURRENT ROW
+       ) <span class="sql-keyword">AS</span> moving_avg_7d
+<span class="sql-keyword">FROM</span> orders;
+    </pre>
+        </div>
+      </div>
+
+
+      <!-- Query 9 -->
+      <div class="etl-card mb-4">
+        <h4><i class="bi bi-person-x text-danger me-2"></i>Query 9 — Customers without Purchases</h4>
+
+        <div class="notebook-description">
+          Identifies customers with no purchases, useful for churn and retention.
+        </div>
+
+        <div class="notebook-cell">
+          <pre>
+<span class="sql-keyword">SELECT</span> c.customer_id,
+       c.customer_name
+<span class="sql-keyword">FROM</span> customers c
+<span class="sql-keyword">LEFT JOIN</span> orders o <span class="sql-keyword">ON</span> o.customer_id = c.customer_id
+<span class="sql-keyword">WHERE</span> o.order_id <span class="sql-keyword">IS NULL</span>;
+    </pre>
+        </div>
+      </div>
+
+      <!-- Query 10 -->
+      <div class="etl-card mb-4">
+        <h4><i class="bi bi-tags text-info me-2"></i>Query 10 — Product Classification</h4>
+
+        <div class="notebook-description">
+          Assigns a category based on the product price.
+        </div>
+
+        <div class="notebook-cell">
+          <pre>
+<span class="sql-keyword">SELECT</span> product_name,
+       price,
+       <span class="sql-keyword">CASE</span>
+            <span class="sql-keyword">WHEN</span> price >= 100 <span class="sql-keyword">THEN</span> 'High'
+            <span class="sql-keyword">WHEN</span> price >= 50  <span class="sql-keyword">THEN</span> 'Medium'
+            <span class="sql-keyword">ELSE</span> 'Low'
+       <span class="sql-keyword">END</span> <span class="sql-keyword">AS</span> price_category
+<span class="sql-keyword">FROM</span> products;
+    </pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="text-center py-3 mt-5">
+    © 2025 Gladys Ramos — Portfolio ·
+    <a href="#" id="scrollTopLink">Go up</a>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/animation.js"></script>
+
+  <!-- Scroll suave -->
+  <script>
+    document.getElementById("scrollTopLink").addEventListener("click", function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+
+</html>
