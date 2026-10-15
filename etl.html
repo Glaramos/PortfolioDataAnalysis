@@ -95,435 +95,265 @@
   <button class="btn btn-outline-secondary tag-filter-btn" data-tag="LG">Logística ...</button>
 </div>
 
+```html
 <!-- Sección de ETL -->
 <div class="section etl">
   <h2>Proyectos ETL</h2>
 
+  <!-- ================================================ -->
+  <!-- PROYECTO 1: YERBA MATE -->
+  <!-- ================================================ -->
+
   <div class="project-card formation-card" data-tags="YM">
+
     <header>
-      <h1>Historia de los Datos</h1>
+      <h2>Preparación y Análisis de Datos – Yerba Mate</h2>
+      <p>
+        Proyecto de limpieza, transformación y análisis exploratorio
+        de datos relacionados con la producción de yerba mate durante
+        el período 2022–2024.
+      </p>
     </header>
 
     <main>
+
       <section>
-        <h2>Origen de los Datos</h2>
+        <h3>1. Limpieza y Preparación de Datos</h3>
 
-              <p>
-  El proyecto “Yerba Mate” surgió de la necesidad de consolidar, limpiar y preparar para análisis un dataset real
-  sobre la producción de yerba mate entre los años 2022 y 2024.
-  Incluye información sobre distintas fincas, zonas geográficas, hectáreas cultivadas, kilos cosechados,
-  tipo de cultivo, precipitaciones, costos operativos y métricas como rendimiento por hectárea y costo por kilogramo.
-  Abarca la producción de yerba mate gestionada por una empresa del sector agroindustrial.
-  La organización registraba información operativa diaria a través de dos fuentes principales:
-  La base de datos del sistema interno, construida en MySQL, que almacenaba tablas relacionadas con:
-</p>
+        <p>
+          El objetivo de este proyecto es mejorar la calidad y consistencia
+          del conjunto de datos para facilitar su análisis posterior.
+          Durante la exploración inicial se revisaron distintos problemas
+          de calidad que podían afectar la interpretación de los resultados.
+        </p>
 
-<ul>
-  <li>Registros de cosecha,</li>
-  <li>Datos agronómicos por finca,</li>
-  <li>Historial de costos operativos,</li>
-  <li>Información ambiental asociada a cada lote.</li>
-</ul>
+        <h4>Principales tareas realizadas</h4>
 
-<p>
-  Archivos de Excel generados por el personal de campo, utilizados para documentar:
-</p>
+        <ul>
+          <li>Identificación y revisión de registros duplicados.</li>
+          <li>Detección y tratamiento de valores faltantes.</li>
+          <li>Corrección de inconsistencias en nombres y categorías.</li>
+          <li>Estandarización de etiquetas y formatos de texto.</li>
+          <li>Revisión de valores numéricos fuera de los rangos esperados.</li>
+          <li>Validación de tipos de datos y consistencia de las variables.</li>
+          <li>Exportación del conjunto de datos preparado en formato CSV.</li>
+        </ul>
 
-<ul>
-  <li>Planificación diaria de actividades,</li>
-  <li>Volúmenes realmente cosechados,</li>
-  <li>Tiempo de cosecha,</li>
-  <li>Condiciones de fertilización,</li>
-  <li>Correcciones manuales de los datos operativos.</li>
-</ul>
+        <p>
+          También se revisaron variables como kilos cosechados, hectáreas
+          cultivadas, costos operativos, precipitaciones y rendimiento por
+          hectárea, con el objetivo de mejorar la calidad de la información.
+        </p>
 
-<p>
-  Dado que cada fuente seguía sus propios criterios de registro —con diferentes formatos, nombres inconsistentes,
-  variaciones ortográficas y diferencias en las unidades—, la empresa carecía de un dataset unificado que pudiera
-  usarse directamente para análisis, informes o toma de decisiones basada en datos.
-</p>
+        <p>
+          <strong>Resultado:</strong> un conjunto de datos más organizado
+          y consistente, preparado para el análisis exploratorio y la
+          elaboración de visualizaciones.
+        </p>
 
+        <p class="project-tech">
+          <strong>Tecnologías:</strong> Python, Pandas, NumPy y Jupyter Notebook.
+        </p>
 
-              <p>
-  Aunque este dataset era funcional, presentaba numerosos problemas comunes en datos agroindustriales:
-  valores faltantes, errores ortográficos, columnas incompletas, registros inconsistentes y errores de carga que
-  impedían un análisis confiable. Por este motivo, se desarrolló un proceso completo de limpieza y estandarización
-  utilizando <strong>Python y Pandas</strong>.
-</p>
+        <div class="social-links">
+          <a href="https://github.com/Glaramos"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="bi bi-github"></i> GitHub
+          </a>
 
-<h4>Operaciones de Limpieza de Datos</h4>
-
-<h3>Identificación y Eliminación de Registros Duplicados</h3>
-<p>
-  Durante la primera revisión, se detectaron filas potencialmente duplicadas en función de la combinación de
-  <em>Año, Mes, Finca y Zona</em>. Algunos registros representaban el mismo evento de cosecha cargado más de una vez.
-  Se conservó una única versión válida de cada registro.
-</p>
-
-<h4>Detección e Imputación de Valores Faltantes</h4>
-<p>
-  Varias columnas críticas contenían valores faltantes:
-</p>
-<ul>
-  <li><strong>Kilos_cosechados</strong> presentaba registros completamente vacíos.</li>
-  <li><strong>Costo_total</strong> mostraba un valor faltante en el año 2023.</li>
-  <li><strong>Rendimiento_kg_ha</strong> contenía valores nulos que podían calcularse a partir de otras columnas.</li>
-</ul>
-<p>
-  Para garantizar la consistencia, los valores faltantes se imputaron según su naturaleza:
-  <strong>promedios o medianas</strong> para datos numéricos y, en el caso del rendimiento, se recalculó como
-  <code>Kilos_cosechados / Hectáreas</code>.
-</p>
-
-<h4>Corrección de Problemas de Formato y Estandarización de Etiquetas</h4>
-<p>
-  Este dataset contenía múltiples inconsistencias textuales:
-</p>
-<ul>
-  <li>Fincas escritas como <em>"Finc@ @"</em>, <em>"Finca cx"</em> o con espacios faltantes.</li>
-  <li>Zonas como <em>"Centr0"</em> o <em>"No"</em> en lugar de “Centro” y “Norte”.</li>
-  <li>Tipos de cultivo como <em>"C0nvenci0nal"</em>, <em>"Convencion@l"</em> o <em>"Orgánic0"</em>.</li>
-</ul>
-<p>
-  Mediante funciones de normalización y reglas de reemplazo, todas las etiquetas fueron estandarizadas a:
-  <strong>“Finca A / B / C”</strong>, <strong>“Norte / Sur / Centro”</strong> y
-  <strong>“Convencional / Orgánico”</strong>.
-</p>
-
-<h4>Corrección de Valores Numéricos Fuera de Rango</h4>
-<p>
-  Se identificaron valores anómalos en:
-</p>
-<ul>
-  <li><strong>Lluvia_mm</strong> con valores decimales en formato incorrecto.</li>
-  <li><strong>Costo_total</strong> vacío o extremadamente bajo.</li>
-  <li><strong>Tiempo_cosecha_dias</strong> faltante o igual a cero.</li>
-</ul>
-<p>
-  Estos casos se corrigieron mediante
-  <strong>reemplazo por valores consistentes del mismo período</strong> o eliminación en casos críticos.
-</p>
-
-<h4>Validación de la Estructura del Dataset</h4>
-<p>
-  Una vez corregidos los errores, se verificó:
-</p>
-<ul>
-  <li>Que todas las columnas tuvieran el tipo de dato correcto (numérico o categórico).</li>
-  <li>Que los rendimientos fueran coherentes (Kilos / Hectáreas).</li>
-  <li>Que no existieran fechas fuera de rango.</li>
-  <li>Que no hubiera inconsistencias lógicas (por ejemplo, fertilizado = “Sí” con costos atípicamente bajos).</li>
-</ul>
-
-<h4>Exportación de la Versión Limpia</h4>
-<p>
-  Finalmente, se generó una versión limpia del dataset y se exportó en formato CSV.
-  Esta versión quedó lista para análisis exploratorio de datos (EDA), modelos predictivos o visualizaciones.
-</p>
-
-
-              <h3>Análisis Exploratorio de Datos (EDA)</h3>
-<p>
-  Con los datos ya depurados, se exploraron las siguientes preguntas clave:
-</p>
-<ul>
-  <li>¿Qué zona produce más kilos por hectárea?</li>
-  <li>¿Los cultivos orgánicos presentan menor producción pero mayores costos?</li>
-  <li>¿Existe una correlación entre las precipitaciones y la producción?</li>
-  <li>¿Qué finca logra el costo por kilogramo más eficiente?</li>
-</ul>
-<p>
-  Para responder estas preguntas se utilizaron resúmenes estadísticos, gráficos comparativos y análisis por
-  categorías.
-</p>
-
-<h3>Conclusión</h3>
-<p>
-  Gracias a este proceso integral, el dataset pasó de ser un conjunto de registros inconsistentes a una fuente
-  confiable de información. El proceso de limpieza permitió realizar análisis precisos y sentó las bases para
-  visualizaciones, dashboards y la toma de decisiones basada en datos dentro del sector yerbatero.
-</p>
-<p>
-  El uso de <strong>Python, Pandas y Numpy</strong> permitió desarrollar un pipeline sólido y replicable,
-  fundamental para cualquier proyecto de análisis de datos agrícolas.
-</p>
-
-            </section>
-          </main>
-
-
-          <p></p>
-          <hr>
-          <p></p>
-
-         <h2 class="project-title">Limpieza de Datos – Yerba Mate</h2>
-
-<!-- Resumen Profesional -->
-<p>
-  Este proyecto se centra en la limpieza y estandarización de un dataset real sobre la producción de yerba mate,
-  el cual presentaba problemas comunes como registros duplicados, valores faltantes, inconsistencias numéricas y
-  variaciones ortográficas en campos categóricos.
-  Utilizando <strong>Python</strong> y <strong>Pandas</strong>, se desarrolló un pipeline completo de limpieza de datos
-  para:
-</p>
-
-<ul>
-  <li>Identificar y eliminar registros duplicados</li>
-  <li>Detectar e imputar valores faltantes</li>
-  <li>Corregir problemas de formato y estandarizar etiquetas de texto</li>
-  <li>Corregir valores numéricos fuera de rango</li>
-  <li>Validar la estructura del dataset</li>
-  <li>Exportar una versión limpia lista para análisis posterior</li>
-</ul>
-
-<p>
-  El resultado es un dataset confiable y consistente, preparado para
-  <strong>análisis exploratorio de datos (EDA)</strong>, modelado o visualización de datos.
-</p>
-
-<p class="project-tech">Tecnologías: Python, Pandas, Numpy</p>
-
-
-          <div class="social-links">
-            <a href="https://github.com/Glaramos" target="_blank"><i class="bi bi-github"></i></a>
-            <a href="https://www.kaggle.com/code/gladysangelicaramos/data-cleaning-yerba-mate?scriptVersionId=270003987&cellId=3"
-              target="_blank"><i class="bi bi-database"></i> Kaggle</a>
-          </div>
-          <!-- </div> -->
-
-          <!-- Tarjeta 1 -->
-          <!-- <div class="project-card"> -->
-
-          <p></p>
-          <hr>
-          <p></p>
-
-          <section id="eda-yerba-mate">
-  <h2>Análisis Exploratorio de Datos (EDA) – Yerba Mate</h2>
-
-  <p>
-    El Análisis Exploratorio de Datos (EDA) permite descubrir patrones, relaciones y comportamientos dentro de un
-    dataset.
-    En este caso, se analiza la producción de yerba mate para responder preguntas como:
-  </p>
-
-  <ul>
-    <li>¿Qué zonas producen más?</li>
-    <li>¿Cómo influye el tipo de cultivo (orgánico o convencional) en la producción?</li>
-    <li>¿Existe una relación entre las precipitaciones y la producción?</li>
-    <li>¿Cuáles son los costos y rendimientos más eficientes?</li>
-  </ul>
-
-  <p class="project-tech">Tecnologías: Python, Pandas</p>
-</section>
-            <div class="social-links">
-              <a href="https://github.com/Glaramos" target="_blank"><i class="bi bi-github"></i></a>
-              <a href="https://www.kaggle.com/code/gladysangelicaramos/an-lisis-exploratorio-de-datos-eda"
-                target="_blank"><i class="bi bi-database"></i>Kaggle</a>
-
-            </div>
+          <a href="https://www.kaggle.com/code/gladysangelicaramos/data-cleaning-yerba-mate?scriptVersionId=270003987&cellId=3"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="bi bi-database"></i> Kaggle
+          </a>
         </div>
+      </section>
 
-        <div class="project-card formation-card" data-tags="SM">
-          <header>
-          <h1>Historia de los Datos</h1>
-</header>
+      <hr>
 
-<main>
-  <section>
-    <h2>Origen de los Datos</h2>
-    <p>
-      Este proyecto se centra en la limpieza y estandarización de un dataset real obtenido a partir de comprobantes de
-      ventas de un supermercado.
-      Los datos presentaban problemas comunes como registros duplicados, valores faltantes, inconsistencias en los
-      productos vendidos y variaciones en los métodos de pago.
-    </p>
-    <p>
-      Utilizando <strong>Python</strong> y <strong>Pandas</strong>, se desarrolló un pipeline de limpieza de datos para:
-    </p>
-    <ul>
-      <li>Eliminar registros de ventas duplicados</li>
-      <li>Imputar valores faltantes en ventas totales y productos</li>
-      <li>Normalizar categorías de productos</li>
-      <li>Corregir inconsistencias en los métodos de pago</li>
-      <li>Generar un dataset limpio para análisis posterior</li>
-    </ul>
-    <p>
-      El resultado es un dataset confiable y consistente, listo para análisis de ventas, evaluación de tendencias de
-      productos y optimización de inventarios.
-    </p>
-  </section>
+      <section id="eda-yerba-mate">
+        <h3>2. Análisis Exploratorio de Datos (EDA)</h3>
 
-<section>
-    <h2>Problemas de los Datos</h2>
-<h3>Registros Duplicados</h3>
-<p>
-  Se encontraron registros duplicados debido a una falla en la integración entre el sistema de ventas y el sistema
-  de facturación.
-</p>
-<p>
-  <strong>Solución:</strong> Se implementó un proceso para identificar y eliminar duplicados mediante consultas SQL y
-  scripts en <strong>Python</strong>.
-</p>
+        <p>
+          Una vez preparados los datos, se realizó un análisis exploratorio
+          para estudiar las variables, identificar patrones y comprender
+          mejor el comportamiento de la producción de yerba mate.
+        </p>
 
-<h3>Valores Faltantes</h3>
-<p>
-  Algunos campos críticos, como el precio de ciertos productos y el importe total de la venta, presentaban valores
-  faltantes debido a errores en la carga de datos.
-</p>
-<p>
-  <strong>Solución:</strong> Se aplicó imputación de datos utilizando promedios de ventas anteriores, junto con la
-  validación de los campos faltantes mediante un script en <strong>Python</strong>.
-</p>
+        <h4>Preguntas de análisis</h4>
 
-<h3>Inconsistencias en los Métodos de Pago</h3>
-<p>
-  Los métodos de pago no estaban estandarizados, lo que generaba registros inconsistentes entre pagos con tarjeta,
-  efectivo y otros medios.
-</p>
-<p>
-  <strong>Solución:</strong> Las categorías de pago se normalizaron mediante un proceso ETL para clasificar de forma
-  uniforme los métodos de pago.
-</p>            
-</section>
+        <ul>
+          <li>¿Qué zonas presentan mayor rendimiento por hectárea?</li>
+          <li>¿Qué diferencias se observan entre cultivos orgánicos y convencionales?</li>
+          <li>¿Qué relación existe entre las precipitaciones y la producción?</li>
+          <li>¿Qué fincas presentan menores costos por kilogramo producido?</li>
+        </ul>
 
-            <section>
-  <h2>Tecnologías y Herramientas Utilizadas</h2>
-  <p>
-    <strong>Motor de Base de Datos:</strong> PostgreSQL, elegido por su rendimiento en la gestión de grandes volúmenes
-    de datos transaccionales.
-  </p>
-  <p>
-    <strong>Plataforma de Análisis:</strong> <strong>Python</strong>, con librerías como
-    <strong>Pandas</strong>, <strong>NumPy</strong> y <strong>Matplotlib</strong> para la limpieza y visualización de
-    datos.
-  </p>
-  <p>
-    <strong>Integración de Datos:</strong> Un pipeline ETL desarrollado en <strong>Python</strong> para extraer,
-    transformar y cargar datos desde los sistemas de ventas hacia PostgreSQL.
-  </p>
-</section>
+        <p>
+          Para explorar estas preguntas se utilizaron estadísticas
+          descriptivas, comparaciones entre categorías y visualizaciones
+          que facilitan la interpretación de los resultados.
+        </p>
 
-<section>
-  <h2>Impacto en la Toma de Decisiones</h2>
-  <p>
-    La limpieza de datos ha permitido a los analistas del supermercado generar reportes más precisos sobre ventas,
-    productos más vendidos y tendencias de consumo. Esta información ha respaldado decisiones más informadas
-    respecto a inventario y estrategias de ventas.
-  </p>
-  <p>
-    Además, la estandarización de datos ha mejorado la integración con otros sistemas, optimizando la gestión de
-    inventarios y la elaboración de reportes de ventas.
-  </p>
-</section>
+        <p>
+          <strong>Resultado:</strong> una exploración de los datos orientada
+          a identificar tendencias, relaciones entre variables y aspectos
+          relevantes para el análisis de la producción.
+        </p>
 
+        <p class="project-tech">
+          <strong>Tecnologías:</strong> Python, Pandas, NumPy,
+          Matplotlib, Seaborn y Jupyter Notebook.
+        </p>
 
-            <hr>
+        <div class="social-links">
+          <a href="https://github.com/Glaramos"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="bi bi-github"></i> GitHub
+          </a>
 
-          </main>
-
-          <h2 class="project-title">Limpieza y Preparación de Datos – Ventas de Supermercado</h2>
-
-<!-- Resumen Profesional -->
-<p>
-  Este proyecto muestra un proceso completo de limpieza y estandarización de un dataset de ventas de un supermercado. 
-  Las principales tareas realizadas incluyen:
-
-  Utilizando <strong>Python</strong> y <strong>Pandas</strong>, se desarrolló un pipeline completo de limpieza de datos para:
-</p>
-<ul>
-  <li>Eliminar registros duplicados para garantizar la integridad de los datos.</li>
-  <li>Gestionar valores faltantes asignando valores por defecto apropiados y recalculando totales cuando fue necesario.</li>
-  <li>Normalizar categorías de productos, corregir errores tipográficos y unificar convenciones de nombres.</li>
-  <li>Estandarizar métodos de pago, limpiar formatos y agrupar variaciones en etiquetas consistentes.</li>
-  <li>Corregir inconsistencias generales para mejorar la calidad del dataset y respaldar análisis posteriores.</li>
-</ul>
-<p>
-  El resultado final es un dataset limpio, listo para <strong>análisis exploratorio, visualización o modelado predictivo</strong>.
-</p>
-
-<p class="project-tech">Tecnologías: Python, Pandas, Numpy</p>
-
-
-          <div class="social-links">
-            <a href="https://github.com/Glaramos" target="_blank"><i class="bi bi-github"></i></a>
-            <a href="https://www.kaggle.com/code/gladysangelicaramos/data-cleaning-preparation-supermarket-sales"
-              target="_blank"><i class="bi bi-database"></i> Kaggle</a>
-          </div>
-
-
-          <!-- Tarjeta 1 -->
-          <!-- <div class="project-card"> -->
-
-          <p></p>
-          <hr>
-          <p></p>
-
-          <section id="eda-Supermarket Sales Analysis">
-  <h3>Análisis de Ventas de Supermercado – Exploratory Data Analysis (EDA) con Python</h3>
-  <p>
-    Este dataset contiene información detallada de ventas de un supermercado, incluyendo categorías de productos, 
-    cantidades vendidas, métodos de pago y totales diarios de transacciones. 
-    El objetivo de este notebook es realizar un análisis exploratorio completo (EDA) para descubrir patrones, 
-    identificar productos de alto rendimiento y comprender el comportamiento de los clientes.
-  </p>
-
-  <!-- Resumen del Análisis de Datos -->
-  <ol>
-    <li>
-      <strong>Limpieza y Preparación de Datos</strong>
-      <ul>
-        <li>Conversión de <em>fecha</em> a tipo datetime</li>
-        <li>Agrupación de variables por categoría, producto y método de pago</li>
-        <li>Cálculo de totales, cantidades y promedios</li>
-      </ul>
-    </li>
-    <li>
-      <strong>Análisis Visual</strong>
-      <ul>
-        <li>Gráfico de barras: Ventas totales por categoría de producto</li>
-        <li>Gráfico de barras: Productos más vendidos por cantidad</li>
-        <li>Gráfico de barras: Ingresos totales por método de pago</li>
-        <li>Gráfico de líneas: Tendencia diaria de ventas</li>
-        <li>Gráfico de barras: Top-5 productos por ticket promedio (precio medio de venta)</li>
-      </ul>
-    </li>
-  </ol>
-
-  <h2>Principales Hallazgos</h2>
-  <ul>
-    <li>Categorías y productos con mayor contribución al ingreso total</li>
-    <li>Artículos con mayor volumen de ventas</li>
-    <li>Métodos de pago preferidos por los clientes</li>
-    <li>Fluctuaciones de ventas a lo largo del tiempo</li>
-    <li>Productos de alto valor con el mayor monto promedio por transacción</li>
-  </ul>
-
-  <p>
-    Todas las visualizaciones fueron creadas utilizando <strong>Seaborn</strong> y <strong>Matplotlib</strong>, y 
-    el análisis se realizó completamente en <strong>Python</strong>.
-  </p>
-
-  <p class="project-tech">Tecnologías: Python, Seaborn, Pandas</p>
-</section>
-
-
-            <div class="social-links">
-              <a href="https://github.com/Glaramos" target="_blank"><i class="bi bi-github"></i></a>
-              <a href="https://www.kaggle.com/code/gladysangelicaramos/supermarket-sales-analysis" target="_blank"><i
-                  class="bi bi-database"></i> Kaggle</a>
-
-            </div>
+          <a href="https://www.kaggle.com/code/gladysangelicaramos/an-lisis-exploratorio-de-datos-eda"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="bi bi-database"></i> Kaggle
+          </a>
         </div>
+      </section>
 
-      </div>
-
-
-    </div>
+    </main>
   </div>
 
-  </main>
+  <!-- ================================================ -->
+  <!-- PROYECTO 2: VENTAS DE SUPERMERCADO -->
+  <!-- ================================================ -->
+
+  <div class="project-card formation-card" data-tags="SM">
+
+    <header>
+      <h2>Preparación y Análisis de Datos – Ventas de Supermercado</h2>
+      <p>
+        Proyecto orientado a mejorar la calidad de los datos de ventas
+        y explorar información comercial mediante herramientas de análisis
+        de datos con Python.
+      </p>
+    </header>
+
+    <main>
+
+      <section>
+        <h3>1. Limpieza y Preparación de Datos</h3>
+
+        <p>
+          Este proyecto se centra en la limpieza y estandarización de un
+          conjunto de datos de ventas de supermercado. El proceso busca
+          reducir inconsistencias y preparar la información para realizar
+          análisis comerciales.
+        </p>
+
+        <h4>Principales tareas realizadas</h4>
+
+        <ul>
+          <li>Exploración de la estructura y los tipos de datos.</li>
+          <li>Identificación y revisión de registros duplicados.</li>
+          <li>Detección y tratamiento de valores faltantes.</li>
+          <li>Normalización de categorías y nombres de productos.</li>
+          <li>Revisión y estandarización de los métodos de pago.</li>
+          <li>Verificación de importes, cantidades y variables relevantes.</li>
+          <li>Preparación del conjunto de datos para el análisis posterior.</li>
+        </ul>
+
+        <p>
+          <strong>Resultado:</strong> datos revisados y preparados para
+          estudiar el comportamiento de las ventas, los productos y las
+          principales variables comerciales.
+        </p>
+
+        <p class="project-tech">
+          <strong>Tecnologías:</strong> Python, Pandas, NumPy y Jupyter Notebook.
+        </p>
+
+        <div class="social-links">
+          <a href="https://github.com/Glaramos"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="bi bi-github"></i> GitHub
+          </a>
+
+          <a href="https://www.kaggle.com/code/gladysangelicaramos/data-cleaning-preparation-supermarket-sales"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="bi bi-database"></i> Kaggle
+          </a>
+        </div>
+      </section>
+
+      <hr>
+
+      <section id="eda-supermarket-sales">
+        <h3>2. Análisis Exploratorio de Ventas (EDA)</h3>
+
+        <p>
+          En esta etapa se exploran las transacciones de ventas para
+          identificar patrones de consumo, comparar categorías de productos
+          y estudiar el comportamiento de distintas variables comerciales.
+        </p>
+
+        <h4>Aspectos analizados</h4>
+
+        <ul>
+          <li>Distribución de las ventas según la categoría de producto.</li>
+          <li>Productos con mayor cantidad vendida.</li>
+          <li>Ingresos según el método de pago.</li>
+          <li>Evolución de las ventas a lo largo del tiempo.</li>
+          <li>Comparación de importes y precios medios de venta.</li>
+        </ul>
+
+        <h4>Visualizaciones</h4>
+
+        <ul>
+          <li>Gráficos de barras para comparar categorías y productos.</li>
+          <li>Gráficos de ingresos por método de pago.</li>
+          <li>Gráficos de líneas para examinar la evolución temporal.</li>
+          <li>Comparaciones de indicadores comerciales.</li>
+        </ul>
+
+        <p>
+          Las visualizaciones permiten interpretar los resultados,
+          reconocer patrones y detectar aspectos que pueden ser útiles
+          para profundizar en el análisis comercial.
+        </p>
+
+        <p class="project-tech">
+          <strong>Tecnologías:</strong> Python, Pandas, NumPy,
+          Matplotlib, Seaborn y Jupyter Notebook.
+        </p>
+
+        <div class="social-links">
+          <a href="https://github.com/Glaramos"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="bi bi-github"></i> GitHub
+          </a>
+
+          <a href="https://www.kaggle.com/code/gladysangelicaramos/supermarket-sales-analysis"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="bi bi-database"></i> Kaggle
+          </a>
+        </div>
+      </section>
+
+    </main>
   </div>
+
+</div>
+<!-- Fin de la sección de proyectos ETL -->
+
+</div>
+<!-- Fin de container-main -->
+```
 
 
   <!-- Footer centrado con enlace de scroll -->
