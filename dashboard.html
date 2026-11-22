@@ -85,7 +85,262 @@
   </p>
 </div>
 
-    <!-- Card 1- Análisis de Rentabilidad Hotelera -->
+<!-- Card 1 - Retail Analytics 2025 -->
+<div class="project-card">
+
+    <h2 class="project-title">
+        Retail Analytics — Análisis Comercial 2025
+    </h2>
+
+    <div class="gif-container">
+        <img src="assets/img/gif/principalretail2025.gif"
+             alt="Dashboard Web Interactivo de Retail Analytics 2025">
+    </div>
+
+    <section id="retail-analytics">
+
+        <h3>📊 Dashboard de análisis comercial, rentabilidad e inventario</h3>
+
+        <h4>Sobre el proyecto</h4>
+
+        <p>
+            Este proyecto consiste en el desarrollo de una
+            <strong>aplicación web interactiva de análisis comercial</strong>,
+            orientada a evaluar el comportamiento de las ventas,
+            la rentabilidad, el inventario y la gestión de compras
+            de un negocio comercial durante el año 2025.
+        </p>
+
+        <p>
+            El análisis comprende <strong>cuatro puntos de venta</strong>:
+            Gastronomía, Kiosco, Souvenirs y Tienda comercial.
+            Se trabajó con datos ficticios de ventas, productos,
+            clientes, compras, proveedores, inventario y movimientos
+            comerciales.
+        </p>
+
+        <p>
+            El objetivo es transformar los <strong>datos comerciales y operativos</strong>
+            en información útil para identificar los principales
+            generadores de facturación, evaluar los márgenes,
+            analizar el comportamiento del inventario y facilitar
+            la <strong>toma de decisiones basada en datos</strong>.
+        </p>
+
+        <h4>Objetivos del análisis</h4>
+
+        <ul>
+            <li>Analizar la <strong>facturación total</strong> y el volumen de ventas.</li>
+            <li>Comparar el rendimiento comercial de los cuatro puntos de venta.</li>
+            <li>Identificar los productos y categorías con mayor participación.</li>
+            <li>Evaluar la <strong>rentabilidad y los márgenes comerciales</strong>.</li>
+            <li>Analizar las compras y los costos de adquisición.</li>
+            <li>Evaluar el desempeño de los proveedores.</li>
+            <li>Controlar los niveles de inventario e identificar situaciones de stock crítico.</li>
+            <li>Analizar las mermas y su impacto económico.</li>
+            <li>Construir indicadores dinámicos para facilitar el seguimiento de la gestión comercial.</li>
+        </ul>
+
+        <h4>Preparación y análisis de datos</h4>
+
+        <p>
+            La preparación de la información se realizó con
+            <strong>Python y Pandas</strong>, mediante un proceso de
+            exploración, limpieza, transformación y validación de los datos.
+        </p>
+
+        <p>
+            Posteriormente, se desarrollaron <strong>consultas SQL</strong>
+            para calcular indicadores, relacionar información y obtener
+            resultados de ventas, rentabilidad, compras, proveedores
+            e inventario.
+        </p>
+
+        <p>
+            La información se organizó en una base de datos
+            <strong>SQLite</strong>, conectada mediante Python con la
+            aplicación web desarrollada en <strong>Streamlit</strong>.
+            Esto permite consultar la base de datos y actualizar los
+            indicadores y visualizaciones según los filtros seleccionados.
+        </p>
+
+        <h4>Herramientas utilizadas</h4>
+
+        <ul>
+            <li><strong>Python:</strong> limpieza, procesamiento y transformación de datos.</li>
+            <li><strong>Pandas:</strong> exploración, manipulación y validación de información.</li>
+            <li><strong>SQL:</strong> consultas, agrupaciones y cálculo de indicadores.</li>
+            <li><strong>SQLite:</strong> almacenamiento y organización de la información.</li>
+            <li><strong>Streamlit:</strong> desarrollo del backend y la aplicación web interactiva.</li>
+            <li><strong>Apache ECharts:</strong> creación de gráficos y visualizaciones interactivas.</li>
+            <li><strong>HTML5 y CSS3:</strong> estructura y personalización visual de la aplicación.</li>
+            <li><strong>Jupyter Notebook:</strong> exploración y desarrollo del análisis.</li>
+        </ul>
+
+        <h4>Principales indicadores</h4>
+
+        <ul>
+            <li><strong>Facturación total:</strong> $571.061.381,32.</li>
+            <li><strong>Registros de ventas:</strong> 59.999 líneas de detalle.</li>
+            <li><strong>Unidades vendidas:</strong> 101.140.</li>
+            <li><strong>Cantidad de tickets:</strong> 44.609.</li>
+            <li><strong>Ticket promedio:</strong> $12.801,48.</li>
+            <li><strong>Margen bruto:</strong> $330.882.080,41.</li>
+            <li><strong>Margen bruto porcentual:</strong> 57,94 %.</li>
+            <li><strong>Casos con stock crítico:</strong> 15.</li>
+            <li><strong>Unidades faltantes:</strong> 263.</li>
+        </ul>
+
+        <h4>Facturación por punto de venta</h4>
+
+        <p>
+            El análisis anual permitió comparar la participación
+            de cada punto de venta sobre la facturación total:
+        </p>
+
+        <ul>
+            <li><strong>PV04 — Tienda comercial:</strong> $252.246.958,10 (44,17 %).</li>
+            <li><strong>PV01 — Gastronomía:</strong> $168.695.803,47 (29,54 %).</li>
+            <li><strong>PV03 — Souvenirs:</strong> $105.267.705,53 (18,43 %).</li>
+            <li><strong>PV02 — Kiosco:</strong> $44.850.914,22 (7,85 %).</li>
+        </ul>
+
+        <p>
+            <strong>Tienda comercial</strong> presentó la mayor participación
+            en la facturación, concentrando el 44,17 % del total,
+            seguida por <strong>Gastronomía</strong> con el 29,54 %.
+            Estos resultados permiten reconocer las diferencias
+            de participación comercial entre las distintas unidades del negocio.
+        </p>
+
+        <h4>Rentabilidad, inventario y compras</h4>
+
+        <p>
+            El análisis de rentabilidad permitió evaluar la relación
+            entre los ingresos por ventas y los costos de los productos,
+            obteniendo un <strong>margen bruto de $330.882.080,41</strong>,
+            equivalente al <strong>57,94 %</strong> de la facturación.
+        </p>
+
+        <p>
+            En materia de inventario, se identificaron
+            <strong>15 casos con stock crítico</strong> y
+            <strong>263 unidades faltantes</strong>, información que
+            permite detectar necesidades de reposición y mejorar
+            el seguimiento de existencias.
+        </p>
+
+        <p>
+            El módulo de compras y proveedores permite analizar
+            los costos de adquisición, la evolución de las compras,
+            los volúmenes adquiridos y la participación de los proveedores
+            en el abastecimiento del negocio.
+        </p>
+
+        <h4>Visualizaciones y funcionalidades del dashboard</h4>
+
+        <p>
+            La aplicación web está organizada en tres módulos principales:
+        </p>
+
+        <ul>
+            <li>
+                <strong>Resumen comercial:</strong> indicadores KPI de
+                facturación, unidades vendidas, cantidad de tickets
+                y ticket promedio; análisis de ventas por período
+                y punto de venta.
+            </li>
+            <li>
+                <strong>Rentabilidad y stock:</strong> análisis de
+                margen bruto, porcentaje de margen, inventario,
+                stock crítico y unidades faltantes.
+            </li>
+            <li>
+                <strong>Compras y proveedores:</strong> indicadores
+                de compras, unidades adquiridas, costos promedio,
+                evolución de compras y análisis de proveedores.
+            </li>
+            <li>
+                <strong>Filtros interactivos:</strong> selección por
+                período y punto de venta.
+            </li>
+            <li>
+                <strong>Actualización dinámica:</strong> los indicadores
+                y gráficos responden a los filtros seleccionados.
+            </li>
+            <li>
+                <strong>Conexión a base de datos:</strong> consultas
+                SQL ejecutadas sobre SQLite mediante Python.
+            </li>
+            <li>
+                <strong>Interfaz personalizada:</strong> navegación
+                por módulos y diseño visual adaptado a la aplicación.
+            </li>
+        </ul>
+
+        <h4>Conclusión</h4>
+
+        <p>
+            El análisis permitió integrar información comercial,
+            financiera y operativa para obtener una visión más completa
+            del desempeño del negocio.
+        </p>
+
+        <p>
+            La comparación entre puntos de venta permitió identificar
+            la concentración de la facturación, mientras que el análisis
+            de rentabilidad e inventario aportó información para evaluar
+            márgenes comerciales y detectar necesidades de reposición.
+        </p>
+
+        <p>
+            Este proyecto demuestra cómo la integración de
+            <strong>Python, SQL, bases de datos y Business Intelligence</strong>
+            permite desarrollar herramientas de análisis que transforman
+            datos operativos en indicadores y visualizaciones útiles
+            para la gestión comercial y la toma de decisiones.
+        </p>
+
+        <h4>Consideraciones del análisis</h4>
+
+        <p>
+            Los datos utilizados son <strong>ficticios</strong> y tienen
+            fines educativos y demostrativos. Los resultados corresponden
+            al período enero-diciembre de 2025 y representan el comportamiento
+            del conjunto de datos analizado, no información financiera
+            de una empresa real.
+        </p>
+
+        <hr>
+
+        <p><strong>Área:</strong> Análisis de datos, Business Intelligence y gestión comercial</p>
+        <p><strong>Período analizado:</strong> Enero - diciembre de 2025</p>
+        <p><strong>Puntos de venta:</strong> Gastronomía, Kiosco, Souvenirs y Tienda comercial</p>
+        <p><strong>Registros de ventas:</strong> 59.999 líneas de detalle</p>
+        <p><strong>Tecnología principal:</strong> Python, SQL, SQLite y Streamlit</p>
+
+    </section>
+
+    <p class="project-tech">
+        Tecnología: Python | Pandas | SQL | SQLite | Streamlit |
+        Apache ECharts | HTML5 | CSS3 | Jupyter Notebook
+    </p>
+
+    <div class="social-links">
+
+        <<a href="https://github.com/Glaramos/Analisis-de-Rentabilidad-Hotelera-2026"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Ver proyecto Retail Analytics 2025 en GitHub">
+            <i class="bi bi-github"></i>
+        </a>
+
+    </div>
+
+</div>
+
+    
+    <!-- Card 2- Análisis de Rentabilidad Hotelera -->
 <div class="project-card">
 
     <h2 class="project-title">
